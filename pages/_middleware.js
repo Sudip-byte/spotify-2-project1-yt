@@ -7,9 +7,15 @@ export async function middleware(req) {
 
     const { pathname } = req.nextUrl;
 
-    if(pathname.includes('/api/auth') || pathname.includes('/favicon.ico') || token)
+    if(pathname.includes('/api/auth') || token)
     {
         return NextResponse.next();
+    }
+
+    if(pathname.includes('/favicon.ico') || pathname.includes('/') )
+    {
+        console.log('REDIRECTING TO LOGIN FOR PATH / and /favicon.ico');
+        return NextResponse.redirect('/login');
     }
 
     if(!token && pathname !== '/login')
