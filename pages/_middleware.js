@@ -12,6 +12,12 @@ export async function middleware(req) {
         return NextResponse.next();
     }
 
+    if(pathname == '/')
+    {
+        console.log("REDIRECTING TO LOGIN...")
+        return NextResponse.redirect('/login');
+    }
+
     if(!token && pathname !== '/login')
     {
         console.log('TOKEN INVALID : redirecting to login');
