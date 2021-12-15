@@ -12,12 +12,6 @@ export async function middleware(req) {
         return NextResponse.next();
     }
 
-    if(pathname.includes('/favicon.ico') || pathname.includes('/') )
-    {
-        console.log('REDIRECTING TO LOGIN FOR PATH / and /favicon.ico');
-        return NextResponse.redirect('/login');
-    }
-
     if(!token && pathname !== '/login')
     {
         console.log('TOKEN INVALID : redirecting to login');
