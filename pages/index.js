@@ -11,7 +11,6 @@ export default function Home() {
       <Head>
         <title>Next App</title>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="icon" href="/" />
       </Head>
 
       <main className="flex">
